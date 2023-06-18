@@ -1,6 +1,6 @@
 from random import randint
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import (QApplication, QWidget, QRadioButton, 
+from PyQt5.QtWidgets import (QApplication, QWidget, 
 QPushButton, QLabel, QVBoxLayout, QHBoxLayout, 
 QButtonGroup, QMessageBox
 )
@@ -35,11 +35,11 @@ layoutV.addLayout(layoutH)
 layoutV.addLayout(layoutH1)
 window.setLayout(layoutV)
 
-randint(1,2)
+number = randint(0,2)
 def rand_num():
-    if randint == 1:
+    if number == 1:
         orel()    
-    elif randint == 2:
+    elif number == 2:
         reshka()
 
 btn.clicked.connect(rand_num)
