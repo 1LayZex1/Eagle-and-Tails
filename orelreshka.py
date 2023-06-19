@@ -15,15 +15,6 @@ window.move(800, 800)
 title = QLabel('Подбросьте монетку')
 btn = QPushButton('Подбросить')
 
-def orel():
-    victory_win = QMessageBox()
-    victory_win.setText('Орёл')
-    victory_win.exec()
-def reshka():
-    victory_lose = QMessageBox()
-    victory_lose.setText('Решка')
-    victory_lose.exec()
-
 layoutV = QVBoxLayout()
 layoutH = QHBoxLayout()
 layoutH1 = QHBoxLayout()
@@ -35,13 +26,23 @@ layoutV.addLayout(layoutH)
 layoutV.addLayout(layoutH1)
 window.setLayout(layoutV)
 
-number = randint(0,2)
+
 def rand_num():
+    number = randint(1, 2)
     if number == 1:
         orel()    
-    elif number == 2:
+    else:
         reshka()
-
+def orel():
+    victory_win = QMessageBox()
+    victory_win.setText('Орёл')
+    victory_win.exec()
+    #title.setText('Орёл')
+def reshka():
+    victory_lose = QMessageBox()
+    victory_lose.setText('Решка')
+    victory_lose.exec()
+    #title.setText('Решка')
 btn.clicked.connect(rand_num)
 
 window.show()
